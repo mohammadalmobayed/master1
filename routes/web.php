@@ -48,7 +48,8 @@ Route::get('users', [UserController::class, 'index'])->name('user.index');
 Route::get('user', [UserController::class, 'create'])->name('user.create');
 Route::post('userr', [UserController::class, 'store'])->name('userr.store');
 
-Route::get('user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::post('user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::post('user/{id}/update', [UserController::class, 'update'])->name('user.update');
 
 Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::get('deanship', [DeanshipController::class, 'index'])->name('deanship.index');

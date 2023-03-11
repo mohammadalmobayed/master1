@@ -19,10 +19,10 @@ Mohammad
                 <div class="card-body">
                     <h2 class="card-title">Update user</h2>
                     
-                    
-                    <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
+                    {{-- method="POST" --}}
+                    <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id)}}"  enctype="multipart/form-data">
                         @csrf 
-                        {{-- @method(‘PUT’) --}}
+                        @method('PUT')
                         <label> Name</label>
                         <input type="text" class="form-control py-2 mb-3" name="name" value="{{$user->name}}"  placeholder="Enter User Name">
                         <label>Job Id </label>

@@ -80,10 +80,11 @@ Mohammad
                                     {{-- @method('DELETE')  --}}
                                     <div class="p-1  border border-0">
                                         <button type="submit" class="btn btn-danger show-alert-delete-box">Del</button>
-                                    </form>
+                                   
                                         <div>
-                                        <a href="{{route('user.edit',$user->id)}}"><button type="submit" class="btn btn-primary">Edit</button></a>
-                                        </div>
+                                        <a href={{route('user.edit',$user->id)}}><button type="submit" class="btn btn-primary">Edit</button></a>
+                                        </div> 
+                                    </form>
                             </td>
                             
                         </tr>
