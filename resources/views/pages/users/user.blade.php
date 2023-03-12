@@ -18,7 +18,7 @@ Mohammad
                     <div class="card">
                         <div class="card-body">
                             <h2  style="display: inline-block" class="card-title">System users</h2>
-                            <a href="{{route('user.create')}}"><button style="margin-left:900px"  class="btn btn-danger show-alert-delete-box" type="submit" >Add</button></a>
+                            <button style="margin-left:900px"  class="btn btn-danger show-alert-delete-box" type="submit" ><a href="{{route('user.create')}}">Add </a></button>
                     <div class="table-responsive pt-3">
                         <table class="table table-dark">
                             <thead>
@@ -75,16 +75,16 @@ Mohammad
                                 {{$user->role}}
                             </td>
                             <td>
-                                <form action="" method="POST">
+                                <form action="{{route('user.edit',$user->id)}}" method="POST">
                                     @csrf
-                                    {{-- @method('DELETE')  --}}
-                                    <div class="p-1  border border-0">
-                                        <button type="submit" class="btn btn-danger show-alert-delete-box">Del</button>
-                                   
-                                        <div>
-                                        <a href={{route('user.edit',$user->id)}}><button type="submit" class="btn btn-primary">Edit</button></a>
-                                        </div> 
+                                    {{-- @method('DELETE')   --}}
+                                    <div class="p-0  border border-0">
+                                        <button type="submit" class="btn btn-danger show-alert-delete-box">Del</button> 
                                     </form>
+                                    
+                                <a href="{{route('user.edit',$user->id)}}"><button type="submit" class="btn btn-primary">Edit</button></a>
+                                
+                                    
                             </td>
                             
                         </tr>

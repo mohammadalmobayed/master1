@@ -20,9 +20,12 @@ Mohammad
                     <h2 class="card-title">Update user</h2>
                     
                     {{-- method="POST" --}}
-                    <form class="form-group mx-sm-3 mb-2" action="{{route('user.update',$user->id)}}"  enctype="multipart/form-data">
-                        @csrf 
-                        @method('PUT')
+                    <form class="form-group mx-sm-3 mb-2" action="{{route('user.edit',$user->id)}}" method="POST" enctype="multipart/form-data">
+                        
+                        {{ method_field('POST') }}
+                        @csrf
+                       
+                        <input type="hidden" name="_method" value="PUT">
                         <label> Name</label>
                         <input type="text" class="form-control py-2 mb-3" name="name" value="{{$user->name}}"  placeholder="Enter User Name">
                         <label>Job Id </label>
@@ -36,14 +39,17 @@ Mohammad
                         <label >Password</label>
                         <input type="password" class="form-control py-2 mb-3" name="password" value="" placeholder="Enter User Password">
                         <label>Status</label>
-                        <select name="role" id="role"   class="form-control py-2 mb-3">
-                            {{-- <option value="user" disabled>USER TYPE</option>
+                        {{-- <select name="role" id="role"   class="form-control py-2 mb-3">
+                            <option value="user" disabled>USER TYPE</option>
                             <option value="user">User</option>
-                            <option value="Admin">admin</option> --}}
-                        </select>
+                            <option value="Admin">admin</option>
+                        </select> --}}
                         <label >User Image</label><br>
                         <input type="file"  class="form-control py-2 mb-3" name="User_Image">
+                        <form action="{{route('user.edit',$user->id)}}" method="POST">
+                            @csrf
                         <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
                     </form>
                             
                         </tr>
